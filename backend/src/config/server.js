@@ -4,6 +4,7 @@ const port = 3003
 
 const bodyParser = require('body-parser')
 const express = require('express')
+
 //retorna um novo servidor
 const server = express()
 
@@ -16,3 +17,6 @@ server.use(bodyParser.json())
 server.listen(port, function(){
   console.log(`BACKEND is running on port ${port}.`)
 })
+
+//Para que o loader receba a referencia a partir de require(./config/server) é necessario exportar server
+module.exports = server
