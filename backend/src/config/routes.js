@@ -12,7 +12,7 @@ module.exports = function(server){
   //O papel de server.use é dar comportamento as requisições url
   server.use('/api', router)
 
-  //Rotas de ciclo de pagamento
+  //Rotas de ciclo de pagamento, tudo que for anexado a model/service será registrado na rota billingCycles
   const BillingCycle = require('../api/billingCycle/billingCycleService')
   BillingCycle.register(router, '/billingCycles' )
 }
