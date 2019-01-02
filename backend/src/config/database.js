@@ -6,7 +6,9 @@ const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 
 //Exporta a conexão do mongodb
-module.exports = mongoose.connect('mongodb://localhost/mymoney')
+module.exports = mongoose.connect('mongodb://localhost/mymoney', {
+  useMongoClient: true
+})
 
 //muda a mensagem de erro
 //'{PATH}' é o nome do atributo
