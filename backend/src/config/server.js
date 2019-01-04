@@ -8,10 +8,15 @@ const express = require('express')
 //retorna um novo servidor
 const server = express()
 
-//use o bodyParser quando vier uma requisição em urlencoded
+//Foi importado o cors
+const allowCors = require('./cors')
+//usa o bodyParser quando vier uma requisição em urlencoded
 server.use(bodyParser.urlencoded({extended: true}))
-//user o bodyParser quando no corpo da requisição vier uma json
+//usa o bodyParser quando no corpo da requisição vier uma json
 server.use(bodyParser.json())
+
+//Usa o cors
+server.use(allowCors)
 
 //Ouve na porta 3003, caso consiga ser alocada será impresso no console o texto
 server.listen(port, function(){
